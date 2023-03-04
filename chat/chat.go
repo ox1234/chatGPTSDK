@@ -20,6 +20,9 @@ type Chat struct {
 }
 
 func NewChat(model constant.ChatModel, apiToken string, choiceNum int) *Chat {
+	if choiceNum <= 0 {
+		choiceNum = 1
+	}
 	return &Chat{
 		Model:     model,
 		APIToken:  apiToken,
